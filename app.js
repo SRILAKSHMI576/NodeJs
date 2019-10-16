@@ -4,7 +4,18 @@ const movies = require("./movies");
 const songs = require("./songs");
 const shortfilms = require("./short-films");
 const serials = require("./serials");
+const mongoose = require("mongoose");
 
+const mongodb_server = "127.0.0.1:27017";
+const database_name = "Entertainment";
+mongoose
+  .connect(`mongodb://${mongodb_server}/${database_name}`)
+  .then(() => {
+    console.log("Database connection successful");
+  })
+  .catch(err => {
+    console.error("Database connection error");
+  });
 const app = express();
 
 //routing
