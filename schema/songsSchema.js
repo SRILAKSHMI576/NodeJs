@@ -7,6 +7,6 @@ const songs_Schema = new mongoose.Schema({
   price: Number
 });
 
-const Song_Model = mongoose.model("Songs", songs_Schema);
+const Songs_Model = mongoose.model("Songs", songs_Schema);
 
-exports.Song_Model = Song_Model;
+exports.Song_Model = Songs_Model;
