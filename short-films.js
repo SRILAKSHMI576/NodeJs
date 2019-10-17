@@ -1,9 +1,10 @@
+const { Shortfilms_Model } = require("./schema/shortfilmsSchema");
+
 const shortfilms_resolver = function(req, res) {
-  var shortfilms_list = [
-    { name: "pelli chupulu", director: "v.v. vinayak" },
-    { name: "sammatame", director: "suma kanakala" }
-  ];
-  res.send(shortfilms_list);
+  Shortfilms_Model.find({}, function(err, docs) {
+    if (err) return err;
+    res.send(docs);
+  });
 };
 
 module.exports.shortfilms_resolver = shortfilms_resolver;
