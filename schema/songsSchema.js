@@ -9,4 +9,4 @@ const songs_Schema = new mongoose.Schema({
 
 const Songs_Model = mongoose.model("Songs", songs_Schema);
 
-exports.Song_Model = Songs_Model;
+exports.Songs_Model = Songs_Model;
