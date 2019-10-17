@@ -1,12 +1,10 @@
+const { MovieModel } = require("./schema/movieSchema");
+
 const movie_resolver = function(req, res) {
-  var movie_details = [
-    { name: "joker", Director: "phonix", producer: "varma" },
-    { name: "jerssi", Director: "nani", producer: "rajamouli" },
-    { name: "eegaa", Director: "samantha", producer: "nagachaitanaya" },
-    { name: "u-turn", Director: "nagarjuna", producer: "samanthaa" },
-    { name: "rangastalam", Director: "sukumar", producer: "ram charan" }
-  ];
-  res.send(movie_details);
+  MovieModel.find({}, function(err, docs) {
+    if (err) return err;
+    res.send(docs);
+  });
 };
 
 module.exports.movie_resolver = movie_resolver;

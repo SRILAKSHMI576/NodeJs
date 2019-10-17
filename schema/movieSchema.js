@@ -7,6 +7,6 @@ const movieSchema = new mongoose.Schema({
   price: Number
 });
 
-const BookModel = mongoose.model("Movie", movieSchema);
+const MovieModel = mongoose.model("Movie", movieSchema);
 
-exports.BookModel = BookModel;
+exports.MovieModel = MovieModel;
