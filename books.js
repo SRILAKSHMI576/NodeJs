@@ -7,4 +7,13 @@ const book_resolver = function(req, res) {
   });
 };
 
+const getBookResolver = function(req, res) {
+  const params = req.params; //object
+  const book_id = params.bookId;
+  BookModel.find({ _id: book_id }, function(err, docs) {
+    if (err) return err;
+    res.send(docs);
+  });
+};
 module.exports.book_resolver = book_resolver;
+module.exports.getBookResolver = getBookResolver;

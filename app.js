@@ -24,7 +24,7 @@ app.get("/movies", movies.movie_resolver);
 app.get("/songs", songs.songs_resolver);
 app.get("/short-films", shortfilms.shortfilms_resolver);
 app.get("/serials", serials.serials_resolver);
-
+app.get("/books/:bookId", books.getBookResolver);
 //start server on 3001
 app.listen(3001, function() {
   console.log("Server started on port 3001.....");
