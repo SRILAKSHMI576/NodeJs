@@ -9,8 +9,8 @@ const songs_resolver = function(req, res) {
 
 const getSongsResolver = function(req, res) {
   const params = req.params;
-  const songId = params.songId;
-  Songs_Model.find({ _id: songId }, function(err, docs) {
+  const songPrice = params.songId;
+  Songs_Model.find({ price: songPrice }, function(err, docs) {
     if (err) return err;
     res.send(docs);
   });
