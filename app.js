@@ -30,9 +30,11 @@ app.get("/songs", songs.getAllSongs);
 app.get("/short-films", shortfilms.shortfilms_resolver);
 app.get("/serials", serials.serials_resolver);
 
-app.get("/books/:bookId", books.getBookResolver);
+app.get("/books/:bookId", books.getBookById);
 app.get("/songs/:songId", songs.getSongsById);
-app.get("/movies/:movieId", movies.getMovieResolver);
+app.get("/movies/:movieId", movies.getMoviesById);
+app.get("/serials/:serialId", serials.getSerialById);
+app.get("/short-films/:shortfilmId", shortfilms.getShortfilmById);
 //start server on 3001
 app.listen(3001, function() {
   console.log("Server started on port 3001.....");

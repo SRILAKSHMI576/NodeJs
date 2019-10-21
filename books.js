@@ -7,7 +7,7 @@ const book_resolver = function(req, res) {
   });
 };
 
-const getBookResolver = function(req, res) {
+const getBookById = function(req, res) {
   //const params = req.params; //object
   const book_id = req.params.bookId;
   BookModel.find({ _id: book_id }, function(err, docs) {
@@ -16,4 +16,4 @@ const getBookResolver = function(req, res) {
   });
 };
 module.exports.book_resolver = book_resolver;
-module.exports.getBookResolver = getBookResolver;
+module.exports.getBookById = getBookById;
