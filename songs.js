@@ -1,19 +1,21 @@
 const { Songs_Model } = require("./schema/songsSchema");
 
-const songs_resolver = function(req, res) {
+//Get all songs in mongodb
+const getAllSongs = function(req, res) {
+  console.log(req.headers);
   Songs_Model.find({}, function(err, docs) {
     if (err) return err;
-    res.send(docs);
+    res.send(docs); //send all songs in response
   });
 };
 
-const getSongsResolver = function(req, res) {
+const getSongsById = function(req, res) {
   const params = req.params;
-  const songPrice = params.songId;
-  Songs_Model.find({ price: songPrice }, function(err, docs) {
+  const song_id = params.songId;
+  Songs_Model.find({ _id: song_id }, function(err, docs) {
     if (err) return err;
-    res.send(docs);
+    res.send(docs[0]);
   });
 };
-module.exports.songs_resolver = songs_resolver;
-module.exports.getSongsResolver = getSongsResolver;
+module.exports.getAllSongs = getAllSongs;
+module.exports.getSongsById = getSongsById;

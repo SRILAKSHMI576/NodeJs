@@ -7,4 +7,15 @@ const movie_resolver = function(req, res) {
   });
 };
 
+const getMovieResolver = function(req, res) {
+  const params = req.params;
+  const movie_id = params.movieId;
+  MovieModel.find({ _id: movie_id }, function(err, docs) {
+    if (err) return err;
+    res.send(docs[0]);
+  });
+};
+
 module.exports.movie_resolver = movie_resolver;
+module.exports.getMovieResolver = getMovieResolver;
+9;
