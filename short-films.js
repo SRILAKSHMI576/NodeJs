@@ -3,7 +3,7 @@ const { Shortfilms_Model } = require("./schema/shortfilmsSchema");
 const shortfilms_resolver = function(req, res) {
   Shortfilms_Model.find({}, function(err, docs) {
     if (err) return err;
-    res.send(docs);
+    res.send(docs[0]);
   });
 };
 
