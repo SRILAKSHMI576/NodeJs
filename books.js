@@ -12,7 +12,7 @@ const getBookResolver = function(req, res) {
   const book_id = params.bookId;
   BookModel.find({ _id: book_id }, function(err, docs) {
     if (err) return err;
-    res.send(docs);
+    res.send(docs[0]);
   });
 };
 module.exports.book_resolver = book_resolver;
