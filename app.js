@@ -6,6 +6,7 @@ const songs = require("./songs");
 const shortfilms = require("./short-films");
 const serials = require("./serials");
 const mongoose = require("mongoose");
+var bodyParser = require("body-parser");
 
 //connection to mongodb
 const mongodb_server = "127.0.0.1:27017";
@@ -20,6 +21,7 @@ mongoose
   });
 
 const app = express();
+app.use(bodyParser.json());
 
 //routing
 //api
@@ -35,6 +37,8 @@ app.get("/songs/:songId", songs.getSongsById);
 app.get("/movies/:movieId", movies.getMoviesById);
 app.get("/serials/:serialId", serials.getSerialById);
 app.get("/short-films/:shortfilmId", shortfilms.getShortfilmById);
+app.post("/movies", movies.insertMovie);
+app.post("/books", books.insertBook);
 //start server on 3001
 app.listen(3001, function() {
   console.log("Server started on port 3001.....");

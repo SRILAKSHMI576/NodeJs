@@ -5,7 +5,8 @@ const mongoose = require("mongoose");
 const bookSchema = new mongoose.Schema({
   name: String,
   author: String,
-  price: Number
+  price: Number,
+  time: Number
 });
 
 //takes schema converts monogodb documents to relations records (row in a table)
