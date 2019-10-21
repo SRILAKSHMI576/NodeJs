@@ -8,8 +8,8 @@ const book_resolver = function(req, res) {
 };
 
 const getBookResolver = function(req, res) {
-  const params = req.params; //object
-  const book_id = params.bookId;
+  //const params = req.params; //object
+  const book_id = req.params.bookId;
   BookModel.find({ _id: book_id }, function(err, docs) {
     if (err) return err;
     res.send(docs[0]);
