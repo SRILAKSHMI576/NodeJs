@@ -17,5 +17,25 @@ const getSongsById = function(req, res) {
     res.send(docs[0]);
   });
 };
+
+const insertSong = function(req, res) {
+  const songDetails = req.body;
+  let msg = new Songs_Model({
+    movie_name: songDetails.movie_name,
+    song_name: songDetails.song_name,
+    movie_year: songDetails.movie_year,
+    price: songDetails.price,
+    time: Date.now()
+  });
+  msg
+    .save()
+    .then(doc => {
+      res.send(doc);
+    })
+    .catch(err => {
+      res.send(err);
+    });
+};
 module.exports.getAllSongs = getAllSongs;
 module.exports.getSongsById = getSongsById;
+module.exports.insertSong = insertSong;

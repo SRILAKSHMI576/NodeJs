@@ -39,6 +39,7 @@ app.get("/serials/:serialId", serials.getSerialById);
 app.get("/short-films/:shortfilmId", shortfilms.getShortfilmById);
 app.post("/movies", movies.insertMovie);
 app.post("/books", books.insertBook);
+app.post("/songs", songs.insertSong);
 //start server on 3001
 app.listen(3001, function() {
   console.log("Server started on port 3001.....");
