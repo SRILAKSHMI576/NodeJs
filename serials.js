@@ -15,5 +15,24 @@ const getSerialById = function(req, res) {
     res.send(docs[0]);
   });
 };
+
+const insertSerial = function(req, res) {
+  const serialDetails = req.body;
+  let msg = new SerialModel({
+    name: serialDetails.name,
+    director: serialDetails.director,
+    price: serialDetails.price,
+    time: Date.now()
+  });
+  msg
+    .save()
+    .then(doc => {
+      res.send(doc);
+    })
+    .catch(err => {
+      res.send(err);
+    });
+};
 module.exports.serials_resolver = serials_resolver;
 module.exports.getSerialById = getSerialById;
+module.exports.insertSerial = insertSerial;

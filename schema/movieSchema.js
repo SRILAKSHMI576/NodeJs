@@ -5,7 +5,8 @@ const movieSchema = new mongoose.Schema({
   director: String,
   producer: String,
   price: Number,
-  time: Number
+  time: Number,
+  updatedAt: Number
 });
 
 const MovieModel = mongoose.model("Movie", movieSchema);
