@@ -35,6 +35,8 @@ app.delete("/movies/:movieId", movies.deleteMovie);
 app.get("/books", books.book_resolver);
 app.get("/books/:bookId", books.getbooksById);
 app.post("/books", books.insertBook);
+app.put("/books/:bookId", books.updateBook);
+app.delete("/books/:bookId", books.deleteBook);
 
 app.get("/songs", songs.getAllSongs);
 app.get("/songs/:songId", songs.getSongsById);
