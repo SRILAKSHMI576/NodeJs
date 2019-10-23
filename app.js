@@ -1,6 +1,7 @@
 // imports
 const express = require("express");
 const movies = require("./movies");
+const books = require("./books");
 const songs = require("./songs");
 const shortfilms = require("./short-films");
 const serials = require("./serials");
@@ -30,6 +31,8 @@ app.get("/movies/:movieId", movies.getMoviesById);
 app.post("/movies", movies.insertMovie);
 app.put("/movies/:movieId", movies.updateMovie);
 app.delete("/movies/:movieId", movies.deleteMovie);
+
+app.get("/books", books.book_resolver);
 
 app.get("/songs", songs.getAllSongs);
 app.get("/songs/:songId", songs.getSongsById);
