@@ -1,6 +1,5 @@
 // imports
 const express = require("express");
-const books = require("./books");
 const movies = require("./movies");
 const songs = require("./songs");
 const shortfilms = require("./short-films");
@@ -25,9 +24,6 @@ app.use(bodyParser.json());
 
 //routing
 //api
-app.get("/books", books.book_resolver);
-app.get("/books/:bookId", books.getBookById);
-app.post("/books", books.insertBook);
 
 app.get("/movies", movies.movie_resolver);
 app.get("/movies/:movieId", movies.getMoviesById);
@@ -38,6 +34,7 @@ app.delete("/movies/:movieId", movies.deleteMovie);
 app.get("/songs", songs.getAllSongs);
 app.get("/songs/:songId", songs.getSongsById);
 app.post("/songs", songs.insertSong);
+app.put("/songs/:songId", songs.updateSong);
 
 app.get("/short-films", shortfilms.shortfilms_resolver);
 app.get("/short-films/:shortfilmId", shortfilms.getShortfilmById);

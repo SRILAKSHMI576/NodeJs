@@ -36,6 +36,11 @@ const insertSong = function(req, res) {
       res.send(err);
     });
 };
+
+const updateSong = function(req, res) {
+  res.send("hello");
+};
 module.exports.getAllSongs = getAllSongs;
 module.exports.getSongsById = getSongsById;
 module.exports.insertSong = insertSong;
+module.exports.updateSong = updateSong;
