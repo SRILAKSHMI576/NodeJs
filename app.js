@@ -33,6 +33,7 @@ app.put("/movies/:movieId", movies.updateMovie);
 app.delete("/movies/:movieId", movies.deleteMovie);
 
 app.get("/books", books.book_resolver);
+app.get("/books/:bookId", books.getbooksById);
 
 app.get("/songs", songs.getAllSongs);
 app.get("/songs/:songId", songs.getSongsById);
