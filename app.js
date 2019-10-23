@@ -42,6 +42,7 @@ app.get("/songs", songs.getAllSongs);
 app.get("/songs/:songId", songs.getSongsById);
 app.post("/songs", songs.insertSong);
 app.put("/songs/:songId", songs.updateSong);
+app.delete("/songs/:songId", songs.deleteSong);
 
 app.get("/short-films", shortfilms.shortfilms_resolver);
 app.get("/short-films/:shortfilmId", shortfilms.getShortfilmById);

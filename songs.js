@@ -38,7 +38,26 @@ const insertSong = function(req, res) {
 };
 
 const updateSong = function(req, res) {
-  res.send("hello");
+  const song_id = req.params.songId;
+  const songs = req.body;
+  const searchQuery = {
+    _id: song_id
+  };
+  const updateSong = {
+    movie_name: songs.movie_name,
+    song_name: songs.song_name,
+    movie_year: songs.movie_year,
+    price: songs.price
+  };
+  Songs_Model.findOneAndUpdate(searchQuery, updateSong, {
+    new: true
+  })
+    .then(docs => {
+      res.send(docs);
+    })
+    .catch(err => {
+      res.send(err);
+    });
 };
 module.exports.getAllSongs = getAllSongs;
 module.exports.getSongsById = getSongsById;
