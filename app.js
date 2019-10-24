@@ -4,7 +4,6 @@ const movies = require("./movies");
 const books = require("./books");
 const songs = require("./songs");
 const shortfilms = require("./shortfilms");
-const serials = require("./serials");
 const mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 
@@ -45,10 +44,7 @@ app.put("/songs/:songId", songs.updateSong);
 app.delete("/songs/:songId", songs.deleteSong);
 
 app.get("/shortfilms", shortfilms.shortfilms_Resolver);
-
-app.get("/serials", serials.serials_resolver);
-app.get("/serials/:serialId", serials.getSerialById);
-app.post("/serials", serials.insertSerial);
+app.get("/shortfilms/:shortfilmId", shortfilms.getShortfilmById);
 
 //start server on 3001
 app.listen(3001, function() {

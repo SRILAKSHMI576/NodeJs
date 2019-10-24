@@ -22,7 +22,8 @@ const insertBook = function(req, res) {
   let msg = new BookModel({
     name: book.name,
     author: book.author,
-    price: book.price
+    price: book.price,
+    time: Date.now()
   });
   msg
     .save()
@@ -41,7 +42,8 @@ const updateBook = function(req, res) {
   const updateBook = {
     name: book.name,
     author: book.author,
-    price: book.price
+    price: book.price,
+    updatedAt: Date.now()
   };
   BookModel.findOneAndUpdate(searchQuery, updateBook, {
     new: true

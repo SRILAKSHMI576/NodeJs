@@ -4,7 +4,9 @@ const songs_Schema = new mongoose.Schema({
   movie_name: String,
   song_name: String,
   movie_year: Number,
-  price: Number
+  price: Number,
+  time: Number,
+  updatedAt: Number
 });
 
 const Songs_Model = mongoose.model("Songs", songs_Schema);
