@@ -59,7 +59,20 @@ const updateSong = function(req, res) {
       res.send(err);
     });
 };
+const deleteSong = function(req, res) {
+  const song_id = req.params.songId;
+  Songs_Model.findOneAndRemove({
+    _id: song_id
+  })
+    .then(response => {
+      res.send(response);
+    })
+    .catch(err => {
+      res.send(err);
+    });
+};
 module.exports.getAllSongs = getAllSongs;
 module.exports.getSongsById = getSongsById;
 module.exports.insertSong = insertSong;
 module.exports.updateSong = updateSong;
+module.exports.deleteSong = deleteSong;

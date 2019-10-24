@@ -3,7 +3,7 @@ const express = require("express");
 const movies = require("./movies");
 const books = require("./books");
 const songs = require("./songs");
-const shortfilms = require("./short-films");
+const shortfilms = require("./shortfilms");
 const serials = require("./serials");
 const mongoose = require("mongoose");
 var bodyParser = require("body-parser");
@@ -44,8 +44,7 @@ app.post("/songs", songs.insertSong);
 app.put("/songs/:songId", songs.updateSong);
 app.delete("/songs/:songId", songs.deleteSong);
 
-app.get("/short-films", shortfilms.shortfilms_resolver);
-app.get("/short-films/:shortfilmId", shortfilms.getShortfilmById);
+app.get("/shortfilms", shortfilms.shortfilms_Resolver);
 
 app.get("/serials", serials.serials_resolver);
 app.get("/serials/:serialId", serials.getSerialById);
