@@ -47,7 +47,8 @@ const updateSong = function(req, res) {
     movie_name: songs.movie_name,
     song_name: songs.song_name,
     movie_year: songs.movie_year,
-    price: songs.price
+    price: songs.price,
+    updatedAt: Date.now()
   };
   Songs_Model.findOneAndUpdate(searchQuery, updateSong, {
     new: true
