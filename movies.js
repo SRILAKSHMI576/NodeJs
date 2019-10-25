@@ -11,6 +11,7 @@ const movie_resolver = function(req, res) {
 const getMoviesById = function(req, res) {
   const params = req.params;
   const movie_id = params.movieId;
+
   const searchQuery = { _id: movie_id };
   MovieModel.find(searchQuery, function(err, docs) {
     if (err) return err;
@@ -35,6 +36,7 @@ const insertMovie = function(req, res) {
     .then(doc => {
       //here doc is the saved doc in db
       //send response to client
+      res.status(201); //response code on succesfull post with doc as a response
       res.send(doc);
     })
     .catch(err => {

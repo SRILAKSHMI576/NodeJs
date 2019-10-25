@@ -28,6 +28,7 @@ const insertBook = function(req, res) {
   msg
     .save()
     .then(doc => {
+      res.status(201);
       res.send(doc);
     })
     .catch(err => {
@@ -62,6 +63,7 @@ const deleteBook = function(req, res) {
     _id: movie_id
   })
     .then(doc => {
+      res.status(204);
       res.send(doc);
     })
     .catch(err => {

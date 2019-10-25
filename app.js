@@ -45,6 +45,9 @@ app.delete("/songs/:songId", songs.deleteSong);
 
 app.get("/shortfilms", shortfilms.shortfilms_Resolver);
 app.get("/shortfilms/:shortfilmId", shortfilms.getShortfilmById);
+app.post("/shortfilms", shortfilms.insertShortfilm);
+app.put("/shortfilms/:shortfilmId", shortfilms.updateShortfilm);
+app.delete("/shortfilms/:shortfilmId", shortfilms.deleteShortfilm);
 
 //start server on 3001
 app.listen(3001, function() {
