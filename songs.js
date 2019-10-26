@@ -30,6 +30,7 @@ const insertSong = function(req, res) {
   msg
     .save()
     .then(doc => {
+      res.status(201);
       res.send(doc);
     })
     .catch(err => {
@@ -66,6 +67,7 @@ const deleteSong = function(req, res) {
     _id: song_id
   })
     .then(response => {
+      res.status(204);
       res.send(response);
     })
     .catch(err => {

@@ -28,6 +28,7 @@ const insertShortfilm = function(req, res) {
   msg
     .save()
     .then(doc => {
+      res.status(201);
       res.send(doc);
     })
     .catch(err => {
@@ -67,6 +68,7 @@ const deleteShortfilm = function(req, res) {
       _id: shortfilm_id
     })
     .then(docs => {
+      res.status(204);
       res.send(docs);
     })
     .catch(err => {

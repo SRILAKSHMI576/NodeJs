@@ -32,6 +32,7 @@ const insertBook = function(req, res) {
       res.send(doc);
     })
     .catch(err => {
+      res.status(201);
       res.send(err);
     });
 };

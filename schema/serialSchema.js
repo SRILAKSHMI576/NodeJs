@@ -8,6 +8,6 @@ const serialSchema = new mongoose.Schema({
   updatedAt: Number
 });
 
-const serialModel = mongoose.model("Serial", serialSchema);
+const SerialModel = mongoose.model("Serial", serialSchema);
 
-exports.serialModel = serialModel;
+exports.SerialModel = SerialModel;

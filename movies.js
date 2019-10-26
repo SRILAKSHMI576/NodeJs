@@ -1,7 +1,8 @@
 const { MovieModel } = require("./schema/movieSchema");
 
 const movie_resolver = function(req, res) {
-  const searchQuery = {};
+  const query = req.query;
+  const searchQuery = query;
   MovieModel.find(searchQuery, function(err, docs) {
     if (err) return err;
     res.send(docs);
@@ -11,7 +12,6 @@ const movie_resolver = function(req, res) {
 const getMoviesById = function(req, res) {
   const params = req.params;
   const movie_id = params.movieId;
-
   const searchQuery = { _id: movie_id };
   MovieModel.find(searchQuery, function(err, docs) {
     if (err) return err;
@@ -75,6 +75,7 @@ const deleteMovie = function(req, res) {
     _id: movieId
   })
     .then(response => {
+      res.status(204); //successfully deleted it give status as 204
       res.send(response);
     })
     .catch(err => {
