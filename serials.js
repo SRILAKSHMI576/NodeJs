@@ -8,6 +8,15 @@ const serial_resolver = function(req, res) {
   });
 };
 
+const serial_Resolver = function(req, res) {
+  const query = req.query;
+  const searchQuery = query;
+  SerialModel.find(searchQuery, function(err, docs) {
+    if (err) return err;
+    res.send(docs);
+  });
+};
+
 const getSerialById = function(req, res) {
   const serial_id = req.params.serialId;
   const searchQuery = { _id: serial_id };
@@ -76,3 +85,4 @@ module.exports.getSerialById = getSerialById;
 module.exports.insertSerial = insertSerial;
 module.exports.updateSerial = updateSerial;
 module.exports.deleteSerial = deleteSerial;
+module.exports.serial_Resolver = serial_Resolver;
