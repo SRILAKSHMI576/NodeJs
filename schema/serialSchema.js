@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const serialSchema = new mongoose.Schema({
+const serialSchema = new mongoosee.Schema({
   name: String,
   director: String,
   price: Number,

@@ -4,6 +4,7 @@ const movies = require("./movies");
 const books = require("./books");
 const songs = require("./songs");
 const shortfilms = require("./shortfilms");
+const serials = require("./serials");
 const mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 
@@ -49,6 +50,8 @@ app.post("/shortfilms", shortfilms.insertShortfilm);
 app.put("/shortfilms/:shortfilmId", shortfilms.updateShortfilm);
 app.delete("/shortfilms/:shortfilmId", shortfilms.deleteShortfilm);
 
+app.get("/serials", serials.serial_resolver);
+app.get("/serials/:serialId", serials.getSerialById);
 //start server on 3001
 app.listen(3001, function() {
   console.log("Server started on port 3001.....");
