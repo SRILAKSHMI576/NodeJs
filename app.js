@@ -52,6 +52,10 @@ app.delete("/shortfilms/:shortfilmId", shortfilms.deleteShortfilm);
 
 app.get("/serials", serials.serial_resolver);
 app.get("/serials/:serialId", serials.getSerialById);
+app.post("/serials", serials.insertSerial);
+app.put("/serials/:serialId", serials.updateSerial);
+app.delete("/serials/:serialId", serials.deleteSerial);
+
 //start server on 3001
 app.listen(3001, function() {
   console.log("Server started on port 3001.....");
